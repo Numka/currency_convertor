@@ -14,9 +14,9 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Currency _$CurrencyFromJson(Map<String, dynamic> json) {
-  return _Currency.fromJson(json);
-}
+// Currency _$CurrencyFromJson(Map<String, dynamic> json) {
+//   return _Currency.fromJson(json);
+// }
 
 /// @nodoc
 mixin _$Currency {
@@ -25,21 +25,18 @@ mixin _$Currency {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CurrencyCopyWith<Currency> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CurrencyCopyWith<Currency> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CurrencyCopyWith<$Res> {
-  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) =
-      _$CurrencyCopyWithImpl<$Res, Currency>;
+  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) = _$CurrencyCopyWithImpl<$Res, Currency>;
   @useResult
   $Res call({String base, List<Rate> rates});
 }
 
 /// @nodoc
-class _$CurrencyCopyWithImpl<$Res, $Val extends Currency>
-    implements $CurrencyCopyWith<$Res> {
+class _$CurrencyCopyWithImpl<$Res, $Val extends Currency> implements $CurrencyCopyWith<$Res> {
   _$CurrencyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -68,21 +65,16 @@ class _$CurrencyCopyWithImpl<$Res, $Val extends Currency>
 
 /// @nodoc
 abstract class _$$_CurrencyCopyWith<$Res> implements $CurrencyCopyWith<$Res> {
-  factory _$$_CurrencyCopyWith(
-          _$_Currency value, $Res Function(_$_Currency) then) =
-      __$$_CurrencyCopyWithImpl<$Res>;
+  factory _$$_CurrencyCopyWith(_$_Currency value, $Res Function(_$_Currency) then) = __$$_CurrencyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String base, List<Rate> rates});
 }
 
 /// @nodoc
-class __$$_CurrencyCopyWithImpl<$Res>
-    extends _$CurrencyCopyWithImpl<$Res, _$_Currency>
+class __$$_CurrencyCopyWithImpl<$Res> extends _$CurrencyCopyWithImpl<$Res, _$_Currency>
     implements _$$_CurrencyCopyWith<$Res> {
-  __$$_CurrencyCopyWithImpl(
-      _$_Currency _value, $Res Function(_$_Currency) _then)
-      : super(_value, _then);
+  __$$_CurrencyCopyWithImpl(_$_Currency _value, $Res Function(_$_Currency) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -105,12 +97,13 @@ class __$$_CurrencyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Currency implements _Currency {
+class _$_Currency extends _Currency {
   const _$_Currency({required this.base, required final List<Rate> rates})
-      : _rates = rates;
+      : _rates = rates,
+        super._();
 
-  factory _$_Currency.fromJson(Map<String, dynamic> json) =>
-      _$$_CurrencyFromJson(json);
+  // factory _$_Currency.fromJson(Map<String, dynamic> json) =>
+  //     _$$_CurrencyFromJson(json);
 
   @override
   final String base;
@@ -138,29 +131,26 @@ class _$_Currency implements _Currency {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, base, const DeepCollectionEquality().hash(_rates));
+  int get hashCode => Object.hash(runtimeType, base, const DeepCollectionEquality().hash(_rates));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CurrencyCopyWith<_$_Currency> get copyWith =>
-      __$$_CurrencyCopyWithImpl<_$_Currency>(this, _$identity);
+  _$$_CurrencyCopyWith<_$_Currency> get copyWith => __$$_CurrencyCopyWithImpl<_$_Currency>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_CurrencyToJson(
-      this,
-    );
-  }
+  // @override
+  // Map<String, dynamic> toJson() {
+  //   return _$$_CurrencyToJson(
+  //     this,
+  //   );
+  // }
 }
 
-abstract class _Currency implements Currency {
-  const factory _Currency(
-      {required final String base,
-      required final List<Rate> rates}) = _$_Currency;
+abstract class _Currency extends Currency {
+  const factory _Currency({required final String base, required final List<Rate> rates}) = _$_Currency;
+  const _Currency._() : super._();
 
-  factory _Currency.fromJson(Map<String, dynamic> json) = _$_Currency.fromJson;
+  //factory _Currency.fromJson(Map<String, dynamic> json) = _$_Currency.fromJson;
 
   @override
   String get base;
@@ -168,12 +158,7 @@ abstract class _Currency implements Currency {
   List<Rate> get rates;
   @override
   @JsonKey(ignore: true)
-  _$$_CurrencyCopyWith<_$_Currency> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Rate _$RateFromJson(Map<String, dynamic> json) {
-  return _Rate.fromJson(json);
+  _$$_CurrencyCopyWith<_$_Currency> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -181,22 +166,19 @@ mixin _$Rate {
   String get base => throw _privateConstructorUsedError;
   double get value => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RateCopyWith<Rate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RateCopyWith<$Res> {
-  factory $RateCopyWith(Rate value, $Res Function(Rate) then) =
-      _$RateCopyWithImpl<$Res, Rate>;
+  factory $RateCopyWith(Rate value, $Res Function(Rate) then) = _$RateCopyWithImpl<$Res, Rate>;
   @useResult
   $Res call({String base, double value});
 }
 
 /// @nodoc
-class _$RateCopyWithImpl<$Res, $Val extends Rate>
-    implements $RateCopyWith<$Res> {
+class _$RateCopyWithImpl<$Res, $Val extends Rate> implements $RateCopyWith<$Res> {
   _$RateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -225,18 +207,15 @@ class _$RateCopyWithImpl<$Res, $Val extends Rate>
 
 /// @nodoc
 abstract class _$$_RateCopyWith<$Res> implements $RateCopyWith<$Res> {
-  factory _$$_RateCopyWith(_$_Rate value, $Res Function(_$_Rate) then) =
-      __$$_RateCopyWithImpl<$Res>;
+  factory _$$_RateCopyWith(_$_Rate value, $Res Function(_$_Rate) then) = __$$_RateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String base, double value});
 }
 
 /// @nodoc
-class __$$_RateCopyWithImpl<$Res> extends _$RateCopyWithImpl<$Res, _$_Rate>
-    implements _$$_RateCopyWith<$Res> {
-  __$$_RateCopyWithImpl(_$_Rate _value, $Res Function(_$_Rate) _then)
-      : super(_value, _then);
+class __$$_RateCopyWithImpl<$Res> extends _$RateCopyWithImpl<$Res, _$_Rate> implements _$$_RateCopyWith<$Res> {
+  __$$_RateCopyWithImpl(_$_Rate _value, $Res Function(_$_Rate) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -258,15 +237,15 @@ class __$$_RateCopyWithImpl<$Res> extends _$RateCopyWithImpl<$Res, _$_Rate>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_Rate implements _Rate {
-  const _$_Rate({required this.base, required this.value});
 
-  factory _$_Rate.fromJson(Map<String, dynamic> json) => _$$_RateFromJson(json);
+class _$_Rate extends _Rate {
+  const _$_Rate({this.base = 'EUR', this.value = 1}) : super._();
 
   @override
+  @JsonKey()
   final String base;
   @override
+  @JsonKey()
   final double value;
 
   @override
@@ -283,29 +262,18 @@ class _$_Rate implements _Rate {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, base, value);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RateCopyWith<_$_Rate> get copyWith =>
-      __$$_RateCopyWithImpl<_$_Rate>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_RateToJson(
-      this,
-    );
-  }
+  _$$_RateCopyWith<_$_Rate> get copyWith => __$$_RateCopyWithImpl<_$_Rate>(this, _$identity);
 }
 
-abstract class _Rate implements Rate {
-  const factory _Rate(
-      {required final String base, required final double value}) = _$_Rate;
-
-  factory _Rate.fromJson(Map<String, dynamic> json) = _$_Rate.fromJson;
+abstract class _Rate extends Rate {
+  const factory _Rate({final String base, final double value}) = _$_Rate;
+  const _Rate._() : super._();
 
   @override
   String get base;

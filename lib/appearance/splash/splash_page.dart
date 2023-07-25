@@ -1,7 +1,5 @@
 import 'package:currency_converter/appearance/convertor/convertor.dart';
 import 'package:currency_converter/application/convertor_fetcher/convertor_fetcher_bloc.dart';
-import 'package:currency_converter/infrastructure/remote/remote_server.dart';
-import 'package:currency_converter/infrastructure/remote/rest_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

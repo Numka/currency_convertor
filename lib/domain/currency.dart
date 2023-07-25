@@ -1,14 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:isar/isar.dart';
 
 part 'currency.freezed.dart';
 part 'currency.g.dart';
 
 @freezed
+@Collection(ignore: {'copyWith'})
 class Currency with _$Currency {
   const factory Currency({
     required String base,
     required List<Rate> rates,
   }) = _Currency;
+
+  const Currency._();
 
   factory Currency.fromJson(Map<String, dynamic> json) => Currency(
         base: json['base'] as String,
@@ -18,15 +22,18 @@ class Currency with _$Currency {
             .toList(),
       );
 
+  Id get id => Isar.autoIncrement;
+
   factory Currency.empty() => const Currency(base: 'EUR', rates: [Rate(base: 'EUR', value: 1)]);
 }
 
 @freezed
+@Embedded(inheritance: false)
 class Rate with _$Rate {
   const factory Rate({
-    required String base,
-    required double value,
+    @Default('EUR') String base,
+    @Default(1) double value,
   }) = _Rate;
 
-  factory Rate.fromJson(Map<String, dynamic> json) => _$RateFromJson(json);
+  const Rate._();
 }

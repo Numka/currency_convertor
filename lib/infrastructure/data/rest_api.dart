@@ -1,4 +1,4 @@
-import 'package:currency_converter/infrastructure/remote/request.dart';
+import 'package:currency_converter/infrastructure/data/request.dart';
 import 'package:dio/dio.dart' as dio;
 
 class RestAPI {

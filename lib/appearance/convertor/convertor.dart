@@ -21,6 +21,7 @@ class Convertor extends StatelessWidget {
         body: SafeArea(
           child: Center(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('Currency convertor'),
                 BlocBuilder<ConvertorActorBloc, ConvertorActorState>(
