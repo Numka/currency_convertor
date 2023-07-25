@@ -18,6 +18,19 @@ class SplashPage extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => Convertor(
                   currency: data.currency,
+                  displayWarning: false,
+                ),
+              ),
+              (route) => false,
+            );
+          },
+          fallBackDataArrived: (data) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Convertor(
+                  currency: data.currency,
+                  displayWarning: true,
                 ),
               ),
               (route) => false,

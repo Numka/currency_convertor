@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -37,5 +40,13 @@ class LocalDBService implements LocalDBInterface {
     await db.writeTxn(() async {
       await db.currencys.put(currencyData); // insert & update
     });
+  }
+
+  @override
+  Future<Currency> fetchCurrencyDataFromJson() async {
+    final jsonStr = await rootBundle.loadString("assets/json/placeholder.json");
+    final jsonResult = jsonDecode(jsonStr);
+    final result = Currency.fromJson(jsonResult);
+    return result;
   }
 }

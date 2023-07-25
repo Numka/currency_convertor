@@ -169,18 +169,21 @@ mixin _$ConvertorFetcherState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Currency currency) dataArrived,
+    required TResult Function(Currency currency) fallBackDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(Currency currency)? dataArrived,
+    TResult? Function(Currency currency)? fallBackDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Currency currency)? dataArrived,
+    TResult Function(Currency currency)? fallBackDataArrived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -188,18 +191,21 @@ mixin _$ConvertorFetcherState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(DataArrived value) dataArrived,
+    required TResult Function(FallBackDataArrived value) fallBackDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(DataArrived value)? dataArrived,
+    TResult? Function(FallBackDataArrived value)? fallBackDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(DataArrived value)? dataArrived,
+    TResult Function(FallBackDataArrived value)? fallBackDataArrived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -262,6 +268,7 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Currency currency) dataArrived,
+    required TResult Function(Currency currency) fallBackDataArrived,
   }) {
     return initial();
   }
@@ -271,6 +278,7 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(Currency currency)? dataArrived,
+    TResult? Function(Currency currency)? fallBackDataArrived,
   }) {
     return initial?.call();
   }
@@ -280,6 +288,7 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Currency currency)? dataArrived,
+    TResult Function(Currency currency)? fallBackDataArrived,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -293,6 +302,7 @@ class _$Initial implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(DataArrived value) dataArrived,
+    required TResult Function(FallBackDataArrived value) fallBackDataArrived,
   }) {
     return initial(this);
   }
@@ -302,6 +312,7 @@ class _$Initial implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(DataArrived value)? dataArrived,
+    TResult? Function(FallBackDataArrived value)? fallBackDataArrived,
   }) {
     return initial?.call(this);
   }
@@ -311,6 +322,7 @@ class _$Initial implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(DataArrived value)? dataArrived,
+    TResult Function(FallBackDataArrived value)? fallBackDataArrived,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -401,6 +413,7 @@ class _$DataArrived implements DataArrived {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(Currency currency) dataArrived,
+    required TResult Function(Currency currency) fallBackDataArrived,
   }) {
     return dataArrived(currency);
   }
@@ -410,6 +423,7 @@ class _$DataArrived implements DataArrived {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(Currency currency)? dataArrived,
+    TResult? Function(Currency currency)? fallBackDataArrived,
   }) {
     return dataArrived?.call(currency);
   }
@@ -419,6 +433,7 @@ class _$DataArrived implements DataArrived {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(Currency currency)? dataArrived,
+    TResult Function(Currency currency)? fallBackDataArrived,
     required TResult orElse(),
   }) {
     if (dataArrived != null) {
@@ -432,6 +447,7 @@ class _$DataArrived implements DataArrived {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(DataArrived value) dataArrived,
+    required TResult Function(FallBackDataArrived value) fallBackDataArrived,
   }) {
     return dataArrived(this);
   }
@@ -441,6 +457,7 @@ class _$DataArrived implements DataArrived {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initial value)? initial,
     TResult? Function(DataArrived value)? dataArrived,
+    TResult? Function(FallBackDataArrived value)? fallBackDataArrived,
   }) {
     return dataArrived?.call(this);
   }
@@ -450,6 +467,7 @@ class _$DataArrived implements DataArrived {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(DataArrived value)? dataArrived,
+    TResult Function(FallBackDataArrived value)? fallBackDataArrived,
     required TResult orElse(),
   }) {
     if (dataArrived != null) {
@@ -465,5 +483,157 @@ abstract class DataArrived implements ConvertorFetcherState {
   Currency get currency;
   @JsonKey(ignore: true)
   _$$DataArrivedCopyWith<_$DataArrived> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FallBackDataArrivedCopyWith<$Res> {
+  factory _$$FallBackDataArrivedCopyWith(_$FallBackDataArrived value,
+          $Res Function(_$FallBackDataArrived) then) =
+      __$$FallBackDataArrivedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Currency currency});
+
+  $CurrencyCopyWith<$Res> get currency;
+}
+
+/// @nodoc
+class __$$FallBackDataArrivedCopyWithImpl<$Res>
+    extends _$ConvertorFetcherStateCopyWithImpl<$Res, _$FallBackDataArrived>
+    implements _$$FallBackDataArrivedCopyWith<$Res> {
+  __$$FallBackDataArrivedCopyWithImpl(
+      _$FallBackDataArrived _value, $Res Function(_$FallBackDataArrived) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currency = null,
+  }) {
+    return _then(_$FallBackDataArrived(
+      null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as Currency,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CurrencyCopyWith<$Res> get currency {
+    return $CurrencyCopyWith<$Res>(_value.currency, (value) {
+      return _then(_value.copyWith(currency: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$FallBackDataArrived implements FallBackDataArrived {
+  const _$FallBackDataArrived(this.currency);
+
+  @override
+  final Currency currency;
+
+  @override
+  String toString() {
+    return 'ConvertorFetcherState.fallBackDataArrived(currency: $currency)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FallBackDataArrived &&
+            (identical(other.currency, currency) ||
+                other.currency == currency));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currency);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FallBackDataArrivedCopyWith<_$FallBackDataArrived> get copyWith =>
+      __$$FallBackDataArrivedCopyWithImpl<_$FallBackDataArrived>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Currency currency) dataArrived,
+    required TResult Function(Currency currency) fallBackDataArrived,
+  }) {
+    return fallBackDataArrived(currency);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(Currency currency)? dataArrived,
+    TResult? Function(Currency currency)? fallBackDataArrived,
+  }) {
+    return fallBackDataArrived?.call(currency);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Currency currency)? dataArrived,
+    TResult Function(Currency currency)? fallBackDataArrived,
+    required TResult orElse(),
+  }) {
+    if (fallBackDataArrived != null) {
+      return fallBackDataArrived(currency);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(DataArrived value) dataArrived,
+    required TResult Function(FallBackDataArrived value) fallBackDataArrived,
+  }) {
+    return fallBackDataArrived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initial value)? initial,
+    TResult? Function(DataArrived value)? dataArrived,
+    TResult? Function(FallBackDataArrived value)? fallBackDataArrived,
+  }) {
+    return fallBackDataArrived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(DataArrived value)? dataArrived,
+    TResult Function(FallBackDataArrived value)? fallBackDataArrived,
+    required TResult orElse(),
+  }) {
+    if (fallBackDataArrived != null) {
+      return fallBackDataArrived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FallBackDataArrived implements ConvertorFetcherState {
+  const factory FallBackDataArrived(final Currency currency) =
+      _$FallBackDataArrived;
+
+  Currency get currency;
+  @JsonKey(ignore: true)
+  _$$FallBackDataArrivedCopyWith<_$FallBackDataArrived> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -4,4 +4,5 @@ abstract class LocalDBInterface {
   Future<Currency> fetchCurrencyDataFromLocalDB();
   Future<void> writeCurrencyDataToLocalDB(Currency currencyData);
   Future<bool> isLocalDBEmpty();
+  Future<Currency> fetchCurrencyDataFromJson();
 }

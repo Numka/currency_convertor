@@ -15,7 +15,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      //TODO change to DI or change baseURL
+      //TODO change to DI
       create: (context) => ConvertorFetcherBloc(
         RemoteServer(
           currencyApi: RestAPI(baseUrl: 'http://api.exchangeratesapi.io/v1'),
@@ -35,6 +35,7 @@ class Application extends StatelessWidget {
           '/splash': (BuildContext context) => const SplashPage(),
           '/convertor': (BuildContext context) => Convertor(
                 currency: Currency.empty(),
+                displayWarning: false,
               ),
         },
       ),

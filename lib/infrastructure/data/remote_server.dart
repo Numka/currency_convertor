@@ -17,15 +17,7 @@ class RemoteServer implements ServerInterface {
   });
 
   @override
-  Future<Currency> fetchCurrencyDataFromJson() async {
-    final jsonStr = await rootBundle.loadString("assets/json/placeholder.json");
-    final jsonResult = jsonDecode(jsonStr);
-    final result = Currency.fromJson(jsonResult);
-    return result;
-  }
-
-  @override
-  Future<Currency> fetchCurrencyDataFromRemoteServer() async {
+  Future<Currency?> fetchCurrencyDataFromRemoteServer() async {
     //http://api.exchangeratesapi.io/v1/latest
     try {
       const request = Request(
@@ -38,7 +30,7 @@ class RemoteServer implements ServerInterface {
       final result = Currency.fromJson(response!.data);
       return result;
     } on Exception catch (_) {
-      return Currency.empty();
+      return null;
     }
   }
 }

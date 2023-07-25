@@ -9,9 +9,11 @@ class Convertor extends StatelessWidget {
   const Convertor({
     super.key,
     required this.currency,
+    required this.displayWarning,
   });
 
   final Currency currency;
+  final bool displayWarning;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,15 @@ class Convertor extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
+                          displayWarning
+                              ? const Text(
+                                  '⚠ no local or remote data was acquired, values were populated with dummy data and might be dated',
+                                  style: TextStyle(
+                                    color: Colors.red,
+                                    fontSize: 18,
+                                  ),
+                                )
+                              : Container(),
                           TextField(
                             decoration: const InputDecoration(
                               labelText: 'Amount',
@@ -77,7 +88,7 @@ class Convertor extends StatelessWidget {
                               ),
                             ],
                           ),
-                          Text(state.result.toString()),
+                          Text(state.result.toStringAsFixed(3)),
                         ],
                       ),
                     );
