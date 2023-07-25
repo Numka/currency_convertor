@@ -167,7 +167,8 @@ extension CurrencyQueryWhere on QueryBuilder<Currency, Currency, QWhereClause> {
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterWhereClause> idGreaterThan(Id id, {bool include = false}) {
+  QueryBuilder<Currency, Currency, QAfterWhereClause> idGreaterThan(Id id,
+      {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.greaterThan(lower: id, includeLower: include),
@@ -175,7 +176,8 @@ extension CurrencyQueryWhere on QueryBuilder<Currency, Currency, QWhereClause> {
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterWhereClause> idLessThan(Id id, {bool include = false}) {
+  QueryBuilder<Currency, Currency, QAfterWhereClause> idLessThan(Id id,
+      {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.lessThan(upper: id, includeUpper: include),
@@ -200,7 +202,8 @@ extension CurrencyQueryWhere on QueryBuilder<Currency, Currency, QWhereClause> {
   }
 }
 
-extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterCondition> {
+extension CurrencyQueryFilter
+    on QueryBuilder<Currency, Currency, QFilterCondition> {
   QueryBuilder<Currency, Currency, QAfterFilterCondition> baseEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -289,7 +292,9 @@ extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterConditi
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterFilterCondition> baseContains(String value, {bool caseSensitive = true}) {
+  QueryBuilder<Currency, Currency, QAfterFilterCondition> baseContains(
+      String value,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'base',
@@ -299,7 +304,9 @@ extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterConditi
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterFilterCondition> baseMatches(String pattern, {bool caseSensitive = true}) {
+  QueryBuilder<Currency, Currency, QAfterFilterCondition> baseMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'base',
@@ -379,7 +386,8 @@ extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterConditi
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterFilterCondition> ratesLengthEqualTo(int length) {
+  QueryBuilder<Currency, Currency, QAfterFilterCondition> ratesLengthEqualTo(
+      int length) {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'rates',
@@ -430,7 +438,8 @@ extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterConditi
     });
   }
 
-  QueryBuilder<Currency, Currency, QAfterFilterCondition> ratesLengthGreaterThan(
+  QueryBuilder<Currency, Currency, QAfterFilterCondition>
+      ratesLengthGreaterThan(
     int length, {
     bool include = false,
   }) {
@@ -463,15 +472,18 @@ extension CurrencyQueryFilter on QueryBuilder<Currency, Currency, QFilterConditi
   }
 }
 
-extension CurrencyQueryObject on QueryBuilder<Currency, Currency, QFilterCondition> {
-  QueryBuilder<Currency, Currency, QAfterFilterCondition> ratesElement(FilterQuery<Rate> q) {
+extension CurrencyQueryObject
+    on QueryBuilder<Currency, Currency, QFilterCondition> {
+  QueryBuilder<Currency, Currency, QAfterFilterCondition> ratesElement(
+      FilterQuery<Rate> q) {
     return QueryBuilder.apply(this, (query) {
       return query.object(q, r'rates');
     });
   }
 }
 
-extension CurrencyQueryLinks on QueryBuilder<Currency, Currency, QFilterCondition> {}
+extension CurrencyQueryLinks
+    on QueryBuilder<Currency, Currency, QFilterCondition> {}
 
 extension CurrencyQuerySortBy on QueryBuilder<Currency, Currency, QSortBy> {
   QueryBuilder<Currency, Currency, QAfterSortBy> sortByBase() {
@@ -487,7 +499,8 @@ extension CurrencyQuerySortBy on QueryBuilder<Currency, Currency, QSortBy> {
   }
 }
 
-extension CurrencyQuerySortThenBy on QueryBuilder<Currency, Currency, QSortThenBy> {
+extension CurrencyQuerySortThenBy
+    on QueryBuilder<Currency, Currency, QSortThenBy> {
   QueryBuilder<Currency, Currency, QAfterSortBy> thenByBase() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'base', Sort.asc);
@@ -513,15 +526,18 @@ extension CurrencyQuerySortThenBy on QueryBuilder<Currency, Currency, QSortThenB
   }
 }
 
-extension CurrencyQueryWhereDistinct on QueryBuilder<Currency, Currency, QDistinct> {
-  QueryBuilder<Currency, Currency, QDistinct> distinctByBase({bool caseSensitive = true}) {
+extension CurrencyQueryWhereDistinct
+    on QueryBuilder<Currency, Currency, QDistinct> {
+  QueryBuilder<Currency, Currency, QDistinct> distinctByBase(
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'base', caseSensitive: caseSensitive);
     });
   }
 }
 
-extension CurrencyQueryProperty on QueryBuilder<Currency, Currency, QQueryProperty> {
+extension CurrencyQueryProperty
+    on QueryBuilder<Currency, Currency, QQueryProperty> {
   QueryBuilder<Currency, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
@@ -551,7 +567,18 @@ extension CurrencyQueryProperty on QueryBuilder<Currency, Currency, QQueryProper
 const RateSchema = Schema(
   name: r'Rate',
   id: 4095304141380566421,
-  properties: {},
+  properties: {
+    r'base': PropertySchema(
+      id: 0,
+      name: r'base',
+      type: IsarType.string,
+    ),
+    r'value': PropertySchema(
+      id: 1,
+      name: r'value',
+      type: IsarType.double,
+    )
+  },
   estimateSize: _rateEstimateSize,
   serialize: _rateSerialize,
   deserialize: _rateDeserialize,
@@ -564,6 +591,7 @@ int _rateEstimateSize(
   Map<Type, List<int>> allOffsets,
 ) {
   var bytesCount = offsets.last;
+  bytesCount += 3 + object.base.length * 3;
   return bytesCount;
 }
 
@@ -584,8 +612,8 @@ Rate _rateDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = Rate(
-    base: reader.readString(offsets[0]),
-    value: reader.readDouble(offsets[1]),
+    base: reader.readStringOrNull(offsets[0]) ?? 'EUR',
+    value: reader.readDoubleOrNull(offsets[1]) ?? 1,
   );
   return object;
 }
@@ -597,11 +625,205 @@ P _rateDeserializeProp<P>(
   Map<Type, List<int>> allOffsets,
 ) {
   switch (propertyId) {
+    case 0:
+      return (reader.readStringOrNull(offset) ?? 'EUR') as P;
+    case 1:
+      return (reader.readDoubleOrNull(offset) ?? 1) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
   }
 }
 
-extension RateQueryFilter on QueryBuilder<Rate, Rate, QFilterCondition> {}
+extension RateQueryFilter on QueryBuilder<Rate, Rate, QFilterCondition> {
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'base',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseContains(String value,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'base',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseMatches(String pattern,
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'base',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'base',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> baseIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'base',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> valueEqualTo(
+    double value, {
+    double epsilon = Query.epsilon,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'value',
+        value: value,
+        epsilon: epsilon,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> valueGreaterThan(
+    double value, {
+    bool include = false,
+    double epsilon = Query.epsilon,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'value',
+        value: value,
+        epsilon: epsilon,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> valueLessThan(
+    double value, {
+    bool include = false,
+    double epsilon = Query.epsilon,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'value',
+        value: value,
+        epsilon: epsilon,
+      ));
+    });
+  }
+
+  QueryBuilder<Rate, Rate, QAfterFilterCondition> valueBetween(
+    double lower,
+    double upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    double epsilon = Query.epsilon,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'value',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        epsilon: epsilon,
+      ));
+    });
+  }
+}
 
 extension RateQueryObject on QueryBuilder<Rate, Rate, QFilterCondition> {}

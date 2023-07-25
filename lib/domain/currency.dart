@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:isar/isar.dart';
 
@@ -24,16 +25,26 @@ class Currency with _$Currency {
 
   Id get id => Isar.autoIncrement;
 
-  factory Currency.empty() => const Currency(base: 'EUR', rates: [Rate(base: 'EUR', value: 1)]);
+  factory Currency.empty() => Currency(base: 'EUR', rates: [Rate()]);
 }
 
-@freezed
-@Embedded(inheritance: false)
-class Rate with _$Rate {
-  const factory Rate({
-    @Default('EUR') String base,
-    @Default(1) double value,
-  }) = _Rate;
+// @embedded
+// class Rate {
+//   const factory Rate({
+//     String base,
+//     double value,
+//   }) = _Rate;
 
-  const Rate._();
+//   const Rate._();
+// }
+
+@embedded
+class Rate {
+  String base;
+  double value;
+
+  Rate({
+    this.base = 'EUR',
+    this.value = 1,
+  });
 }
