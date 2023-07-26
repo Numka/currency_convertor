@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 
 import '../../domain/currency.dart';
 import '../../domain/localdb_interface.dart';
 
+@lazySingleton
 class LocalDBService implements LocalDBInterface {
   late Future<Isar> isar;
 

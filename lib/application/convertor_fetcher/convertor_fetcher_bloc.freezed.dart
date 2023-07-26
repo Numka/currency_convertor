@@ -19,32 +19,44 @@ mixin _$ConvertorFetcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() connected,
+    required TResult Function() notConnected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? connected,
+    TResult? Function()? notConnected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? connected,
+    TResult Function()? notConnected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
+    required TResult Function(Connected value) connected,
+    required TResult Function(NotConnected value) notConnected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
+    TResult? Function(Connected value)? connected,
+    TResult? Function(NotConnected value)? notConnected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
+    TResult Function(Connected value)? connected,
+    TResult Function(NotConnected value)? notConnected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +118,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() connected,
+    required TResult Function() notConnected,
   }) {
     return started();
   }
@@ -114,6 +128,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? connected,
+    TResult? Function()? notConnected,
   }) {
     return started?.call();
   }
@@ -122,6 +138,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? connected,
+    TResult Function()? notConnected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +152,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Started value) started,
+    required TResult Function(Connected value) connected,
+    required TResult Function(NotConnected value) notConnected,
   }) {
     return started(this);
   }
@@ -142,6 +162,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Started value)? started,
+    TResult? Function(Connected value)? connected,
+    TResult? Function(NotConnected value)? notConnected,
   }) {
     return started?.call(this);
   }
@@ -150,6 +172,8 @@ class _$Started implements Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Started value)? started,
+    TResult Function(Connected value)? connected,
+    TResult Function(NotConnected value)? notConnected,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -161,6 +185,222 @@ class _$Started implements Started {
 
 abstract class Started implements ConvertorFetcherEvent {
   const factory Started() = _$Started;
+}
+
+/// @nodoc
+abstract class _$$ConnectedCopyWith<$Res> {
+  factory _$$ConnectedCopyWith(
+          _$Connected value, $Res Function(_$Connected) then) =
+      __$$ConnectedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ConnectedCopyWithImpl<$Res>
+    extends _$ConvertorFetcherEventCopyWithImpl<$Res, _$Connected>
+    implements _$$ConnectedCopyWith<$Res> {
+  __$$ConnectedCopyWithImpl(
+      _$Connected _value, $Res Function(_$Connected) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$Connected implements Connected {
+  const _$Connected();
+
+  @override
+  String toString() {
+    return 'ConvertorFetcherEvent.connected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Connected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() connected,
+    required TResult Function() notConnected,
+  }) {
+    return connected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? connected,
+    TResult? Function()? notConnected,
+  }) {
+    return connected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? connected,
+    TResult Function()? notConnected,
+    required TResult orElse(),
+  }) {
+    if (connected != null) {
+      return connected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(Connected value) connected,
+    required TResult Function(NotConnected value) notConnected,
+  }) {
+    return connected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(Connected value)? connected,
+    TResult? Function(NotConnected value)? notConnected,
+  }) {
+    return connected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(Connected value)? connected,
+    TResult Function(NotConnected value)? notConnected,
+    required TResult orElse(),
+  }) {
+    if (connected != null) {
+      return connected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Connected implements ConvertorFetcherEvent {
+  const factory Connected() = _$Connected;
+}
+
+/// @nodoc
+abstract class _$$NotConnectedCopyWith<$Res> {
+  factory _$$NotConnectedCopyWith(
+          _$NotConnected value, $Res Function(_$NotConnected) then) =
+      __$$NotConnectedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotConnectedCopyWithImpl<$Res>
+    extends _$ConvertorFetcherEventCopyWithImpl<$Res, _$NotConnected>
+    implements _$$NotConnectedCopyWith<$Res> {
+  __$$NotConnectedCopyWithImpl(
+      _$NotConnected _value, $Res Function(_$NotConnected) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$NotConnected implements NotConnected {
+  const _$NotConnected();
+
+  @override
+  String toString() {
+    return 'ConvertorFetcherEvent.notConnected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NotConnected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() connected,
+    required TResult Function() notConnected,
+  }) {
+    return notConnected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? connected,
+    TResult? Function()? notConnected,
+  }) {
+    return notConnected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? connected,
+    TResult Function()? notConnected,
+    required TResult orElse(),
+  }) {
+    if (notConnected != null) {
+      return notConnected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(Connected value) connected,
+    required TResult Function(NotConnected value) notConnected,
+  }) {
+    return notConnected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(Connected value)? connected,
+    TResult? Function(NotConnected value)? notConnected,
+  }) {
+    return notConnected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(Connected value)? connected,
+    TResult Function(NotConnected value)? notConnected,
+    required TResult orElse(),
+  }) {
+    if (notConnected != null) {
+      return notConnected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotConnected implements ConvertorFetcherEvent {
+  const factory NotConnected() = _$NotConnected;
 }
 
 /// @nodoc

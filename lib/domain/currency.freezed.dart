@@ -14,9 +14,9 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-// Currency _$CurrencyFromJson(Map<String, dynamic> json) {
-//   return _Currency.fromJson(json);
-// }
+Currency _$CurrencyFromJson(Map<String, dynamic> json) {
+  return _Currency.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Currency {
@@ -25,18 +25,21 @@ mixin _$Currency {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CurrencyCopyWith<Currency> get copyWith => throw _privateConstructorUsedError;
+  $CurrencyCopyWith<Currency> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CurrencyCopyWith<$Res> {
-  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) = _$CurrencyCopyWithImpl<$Res, Currency>;
+  factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) =
+      _$CurrencyCopyWithImpl<$Res, Currency>;
   @useResult
   $Res call({String base, List<Rate> rates});
 }
 
 /// @nodoc
-class _$CurrencyCopyWithImpl<$Res, $Val extends Currency> implements $CurrencyCopyWith<$Res> {
+class _$CurrencyCopyWithImpl<$Res, $Val extends Currency>
+    implements $CurrencyCopyWith<$Res> {
   _$CurrencyCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -65,16 +68,21 @@ class _$CurrencyCopyWithImpl<$Res, $Val extends Currency> implements $CurrencyCo
 
 /// @nodoc
 abstract class _$$_CurrencyCopyWith<$Res> implements $CurrencyCopyWith<$Res> {
-  factory _$$_CurrencyCopyWith(_$_Currency value, $Res Function(_$_Currency) then) = __$$_CurrencyCopyWithImpl<$Res>;
+  factory _$$_CurrencyCopyWith(
+          _$_Currency value, $Res Function(_$_Currency) then) =
+      __$$_CurrencyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String base, List<Rate> rates});
 }
 
 /// @nodoc
-class __$$_CurrencyCopyWithImpl<$Res> extends _$CurrencyCopyWithImpl<$Res, _$_Currency>
+class __$$_CurrencyCopyWithImpl<$Res>
+    extends _$CurrencyCopyWithImpl<$Res, _$_Currency>
     implements _$$_CurrencyCopyWith<$Res> {
-  __$$_CurrencyCopyWithImpl(_$_Currency _value, $Res Function(_$_Currency) _then) : super(_value, _then);
+  __$$_CurrencyCopyWithImpl(
+      _$_Currency _value, $Res Function(_$_Currency) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -102,8 +110,8 @@ class _$_Currency extends _Currency {
       : _rates = rates,
         super._();
 
-  // factory _$_Currency.fromJson(Map<String, dynamic> json) =>
-  //     _$$_CurrencyFromJson(json);
+  factory _$_Currency.fromJson(Map<String, dynamic> json) =>
+      _$$_CurrencyFromJson(json);
 
   @override
   final String base;
@@ -131,26 +139,30 @@ class _$_Currency extends _Currency {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, base, const DeepCollectionEquality().hash(_rates));
+  int get hashCode => Object.hash(
+      runtimeType, base, const DeepCollectionEquality().hash(_rates));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CurrencyCopyWith<_$_Currency> get copyWith => __$$_CurrencyCopyWithImpl<_$_Currency>(this, _$identity);
+  _$$_CurrencyCopyWith<_$_Currency> get copyWith =>
+      __$$_CurrencyCopyWithImpl<_$_Currency>(this, _$identity);
 
-  // @override
-  // Map<String, dynamic> toJson() {
-  //   return _$$_CurrencyToJson(
-  //     this,
-  //   );
-  // }
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CurrencyToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Currency extends Currency {
-  const factory _Currency({required final String base, required final List<Rate> rates}) = _$_Currency;
+  const factory _Currency(
+      {required final String base,
+      required final List<Rate> rates}) = _$_Currency;
   const _Currency._() : super._();
 
-  //factory _Currency.fromJson(Map<String, dynamic> json) = _$_Currency.fromJson;
+  factory _Currency.fromJson(Map<String, dynamic> json) = _$_Currency.fromJson;
 
   @override
   String get base;
@@ -158,5 +170,6 @@ abstract class _Currency extends Currency {
   List<Rate> get rates;
   @override
   @JsonKey(ignore: true)
-  _$$_CurrencyCopyWith<_$_Currency> get copyWith => throw _privateConstructorUsedError;
+  _$$_CurrencyCopyWith<_$_Currency> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -827,3 +827,30 @@ extension RateQueryFilter on QueryBuilder<Rate, Rate, QFilterCondition> {
 }
 
 extension RateQueryObject on QueryBuilder<Rate, Rate, QFilterCondition> {}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+Rate _$RateFromJson(Map<String, dynamic> json) => Rate(
+      base: json['base'] as String? ?? 'EUR',
+      value: (json['value'] as num?)?.toDouble() ?? 1,
+    );
+
+Map<String, dynamic> _$RateToJson(Rate instance) => <String, dynamic>{
+      'base': instance.base,
+      'value': instance.value,
+    };
+
+_$_Currency _$$_CurrencyFromJson(Map<String, dynamic> json) => _$_Currency(
+      base: json['base'] as String,
+      rates: (json['rates'] as List<dynamic>)
+          .map((e) => Rate.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_CurrencyToJson(_$_Currency instance) =>
+    <String, dynamic>{
+      'base': instance.base,
+      'rates': instance.rates,
+    };

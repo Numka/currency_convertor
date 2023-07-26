@@ -1,20 +1,19 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'dart:convert';
-
 import 'package:currency_converter/domain/currency.dart';
 import 'package:currency_converter/infrastructure/data/request.dart';
 import 'package:currency_converter/infrastructure/data/rest_api.dart';
-import 'package:flutter/services.dart';
+import 'package:injectable/injectable.dart';
 
 import '../../domain/server_interface.dart';
 
+@lazySingleton
 class RemoteServer implements ServerInterface {
-  RestAPI currencyApi;
+  late RestAPI currencyApi;
 
-  RemoteServer({
-    required this.currencyApi,
-  });
+  RemoteServer() {
+    currencyApi = RestAPI(baseUrl: 'http://api.exchangeratesapi.io/v1');
+  }
 
   @override
   Future<Currency?> fetchCurrencyDataFromRemoteServer() async {

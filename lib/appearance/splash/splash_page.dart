@@ -13,7 +13,7 @@ class SplashPage extends StatelessWidget {
         state.map(
           initial: (_) {},
           dataArrived: (data) {
-            Navigator.pushAndRemoveUntil(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Convertor(
@@ -21,11 +21,10 @@ class SplashPage extends StatelessWidget {
                   displayWarning: false,
                 ),
               ),
-              (route) => false,
             );
           },
           fallBackDataArrived: (data) {
-            Navigator.pushAndRemoveUntil(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => Convertor(
@@ -33,7 +32,6 @@ class SplashPage extends StatelessWidget {
                   displayWarning: true,
                 ),
               ),
-              (route) => false,
             );
           },
         );

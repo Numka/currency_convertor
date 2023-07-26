@@ -23,6 +23,7 @@ mixin _$ConvertorActorEvent {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$ConvertorActorEvent {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$ConvertorActorEvent {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,8 @@ mixin _$ConvertorActorEvent {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +69,7 @@ mixin _$ConvertorActorEvent {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +81,7 @@ mixin _$ConvertorActorEvent {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +183,7 @@ class _$Started implements Started {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) {
     return started(currency);
   }
@@ -188,6 +196,7 @@ class _$Started implements Started {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) {
     return started?.call(currency);
   }
@@ -200,6 +209,7 @@ class _$Started implements Started {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -218,6 +228,8 @@ class _$Started implements Started {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) {
     return started(this);
   }
@@ -232,6 +244,7 @@ class _$Started implements Started {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) {
     return started?.call(this);
   }
@@ -246,6 +259,7 @@ class _$Started implements Started {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -335,6 +349,7 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) {
     return firstDropdownValueChanged(value);
   }
@@ -347,6 +362,7 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) {
     return firstDropdownValueChanged?.call(value);
   }
@@ -359,6 +375,7 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (firstDropdownValueChanged != null) {
@@ -377,6 +394,8 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) {
     return firstDropdownValueChanged(this);
   }
@@ -391,6 +410,7 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) {
     return firstDropdownValueChanged?.call(this);
   }
@@ -405,6 +425,7 @@ class _$FirstDropdownValueChanged implements FirstDropdownValueChanged {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (firstDropdownValueChanged != null) {
@@ -497,6 +518,7 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) {
     return secondDropdownValueChanged(value);
   }
@@ -509,6 +531,7 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) {
     return secondDropdownValueChanged?.call(value);
   }
@@ -521,6 +544,7 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (secondDropdownValueChanged != null) {
@@ -539,6 +563,8 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) {
     return secondDropdownValueChanged(this);
   }
@@ -553,6 +579,7 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) {
     return secondDropdownValueChanged?.call(this);
   }
@@ -567,6 +594,7 @@ class _$SecondDropdownValueChanged implements SecondDropdownValueChanged {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (secondDropdownValueChanged != null) {
@@ -656,6 +684,7 @@ class _$InputUpdated implements InputUpdated {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) {
     return inputUpdated(updatedValue);
   }
@@ -668,6 +697,7 @@ class _$InputUpdated implements InputUpdated {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) {
     return inputUpdated?.call(updatedValue);
   }
@@ -680,6 +710,7 @@ class _$InputUpdated implements InputUpdated {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (inputUpdated != null) {
@@ -698,6 +729,8 @@ class _$InputUpdated implements InputUpdated {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) {
     return inputUpdated(this);
   }
@@ -712,6 +745,7 @@ class _$InputUpdated implements InputUpdated {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) {
     return inputUpdated?.call(this);
   }
@@ -726,6 +760,7 @@ class _$InputUpdated implements InputUpdated {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (inputUpdated != null) {
@@ -814,6 +849,7 @@ class _$SubmittedValue implements SubmittedValue {
     required TResult Function(String value) secondDropdownValueChanged,
     required TResult Function(String updatedValue) inputUpdated,
     required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
   }) {
     return submittedValue(this.submittedValue);
   }
@@ -826,6 +862,7 @@ class _$SubmittedValue implements SubmittedValue {
     TResult? Function(String value)? secondDropdownValueChanged,
     TResult? Function(String updatedValue)? inputUpdated,
     TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
   }) {
     return submittedValue?.call(this.submittedValue);
   }
@@ -838,6 +875,7 @@ class _$SubmittedValue implements SubmittedValue {
     TResult Function(String value)? secondDropdownValueChanged,
     TResult Function(String updatedValue)? inputUpdated,
     TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (submittedValue != null) {
@@ -856,6 +894,8 @@ class _$SubmittedValue implements SubmittedValue {
         secondDropdownValueChanged,
     required TResult Function(InputUpdated value) inputUpdated,
     required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
   }) {
     return submittedValue(this);
   }
@@ -870,6 +910,7 @@ class _$SubmittedValue implements SubmittedValue {
         secondDropdownValueChanged,
     TResult? Function(InputUpdated value)? inputUpdated,
     TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
   }) {
     return submittedValue?.call(this);
   }
@@ -884,6 +925,7 @@ class _$SubmittedValue implements SubmittedValue {
         secondDropdownValueChanged,
     TResult Function(InputUpdated value)? inputUpdated,
     TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
     required TResult orElse(),
   }) {
     if (submittedValue != null) {
@@ -899,6 +941,183 @@ abstract class SubmittedValue implements ConvertorActorEvent {
   String get submittedValue;
   @JsonKey(ignore: true)
   _$$SubmittedValueCopyWith<_$SubmittedValue> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NewCurrencyDataArrivedCopyWith<$Res> {
+  factory _$$NewCurrencyDataArrivedCopyWith(_$NewCurrencyDataArrived value,
+          $Res Function(_$NewCurrencyDataArrived) then) =
+      __$$NewCurrencyDataArrivedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Currency currency});
+
+  $CurrencyCopyWith<$Res> get currency;
+}
+
+/// @nodoc
+class __$$NewCurrencyDataArrivedCopyWithImpl<$Res>
+    extends _$ConvertorActorEventCopyWithImpl<$Res, _$NewCurrencyDataArrived>
+    implements _$$NewCurrencyDataArrivedCopyWith<$Res> {
+  __$$NewCurrencyDataArrivedCopyWithImpl(_$NewCurrencyDataArrived _value,
+      $Res Function(_$NewCurrencyDataArrived) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currency = null,
+  }) {
+    return _then(_$NewCurrencyDataArrived(
+      null == currency
+          ? _value.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as Currency,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CurrencyCopyWith<$Res> get currency {
+    return $CurrencyCopyWith<$Res>(_value.currency, (value) {
+      return _then(_value.copyWith(currency: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$NewCurrencyDataArrived implements NewCurrencyDataArrived {
+  const _$NewCurrencyDataArrived(this.currency);
+
+  @override
+  final Currency currency;
+
+  @override
+  String toString() {
+    return 'ConvertorActorEvent.newCurrencyDataArrived(currency: $currency)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NewCurrencyDataArrived &&
+            (identical(other.currency, currency) ||
+                other.currency == currency));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, currency);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NewCurrencyDataArrivedCopyWith<_$NewCurrencyDataArrived> get copyWith =>
+      __$$NewCurrencyDataArrivedCopyWithImpl<_$NewCurrencyDataArrived>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Currency currency) started,
+    required TResult Function(String value) firstDropdownValueChanged,
+    required TResult Function(String value) secondDropdownValueChanged,
+    required TResult Function(String updatedValue) inputUpdated,
+    required TResult Function(String submittedValue) submittedValue,
+    required TResult Function(Currency currency) newCurrencyDataArrived,
+  }) {
+    return newCurrencyDataArrived(currency);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Currency currency)? started,
+    TResult? Function(String value)? firstDropdownValueChanged,
+    TResult? Function(String value)? secondDropdownValueChanged,
+    TResult? Function(String updatedValue)? inputUpdated,
+    TResult? Function(String submittedValue)? submittedValue,
+    TResult? Function(Currency currency)? newCurrencyDataArrived,
+  }) {
+    return newCurrencyDataArrived?.call(currency);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Currency currency)? started,
+    TResult Function(String value)? firstDropdownValueChanged,
+    TResult Function(String value)? secondDropdownValueChanged,
+    TResult Function(String updatedValue)? inputUpdated,
+    TResult Function(String submittedValue)? submittedValue,
+    TResult Function(Currency currency)? newCurrencyDataArrived,
+    required TResult orElse(),
+  }) {
+    if (newCurrencyDataArrived != null) {
+      return newCurrencyDataArrived(currency);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Started value) started,
+    required TResult Function(FirstDropdownValueChanged value)
+        firstDropdownValueChanged,
+    required TResult Function(SecondDropdownValueChanged value)
+        secondDropdownValueChanged,
+    required TResult Function(InputUpdated value) inputUpdated,
+    required TResult Function(SubmittedValue value) submittedValue,
+    required TResult Function(NewCurrencyDataArrived value)
+        newCurrencyDataArrived,
+  }) {
+    return newCurrencyDataArrived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Started value)? started,
+    TResult? Function(FirstDropdownValueChanged value)?
+        firstDropdownValueChanged,
+    TResult? Function(SecondDropdownValueChanged value)?
+        secondDropdownValueChanged,
+    TResult? Function(InputUpdated value)? inputUpdated,
+    TResult? Function(SubmittedValue value)? submittedValue,
+    TResult? Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
+  }) {
+    return newCurrencyDataArrived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Started value)? started,
+    TResult Function(FirstDropdownValueChanged value)?
+        firstDropdownValueChanged,
+    TResult Function(SecondDropdownValueChanged value)?
+        secondDropdownValueChanged,
+    TResult Function(InputUpdated value)? inputUpdated,
+    TResult Function(SubmittedValue value)? submittedValue,
+    TResult Function(NewCurrencyDataArrived value)? newCurrencyDataArrived,
+    required TResult orElse(),
+  }) {
+    if (newCurrencyDataArrived != null) {
+      return newCurrencyDataArrived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NewCurrencyDataArrived implements ConvertorActorEvent {
+  const factory NewCurrencyDataArrived(final Currency currency) =
+      _$NewCurrencyDataArrived;
+
+  Currency get currency;
+  @JsonKey(ignore: true)
+  _$$NewCurrencyDataArrivedCopyWith<_$NewCurrencyDataArrived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

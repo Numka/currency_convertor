@@ -15,6 +15,8 @@ class Currency with _$Currency {
 
   const Currency._();
 
+  //factory Currency.fromJson(Map<String, dynamic> json) => _$CurrencyFromJson(json);
+
   factory Currency.fromJson(Map<String, dynamic> json) => Currency(
         base: json['base'] as String,
         rates: (json['rates'] as Map<String, dynamic>)
@@ -28,17 +30,8 @@ class Currency with _$Currency {
   factory Currency.empty() => Currency(base: 'EUR', rates: [Rate()]);
 }
 
-// @embedded
-// class Rate {
-//   const factory Rate({
-//     String base,
-//     double value,
-//   }) = _Rate;
-
-//   const Rate._();
-// }
-
 @embedded
+@JsonSerializable()
 class Rate {
   String base;
   double value;
@@ -47,4 +40,11 @@ class Rate {
     this.base = 'EUR',
     this.value = 1,
   });
+
+  factory Rate.fromJson(Map<String, dynamic> json) => _$RateFromJson(json);
 }
+
+// @freezed
+// class Currency with _$Currency{
+//   const factory Currency() = _Currency;
+// }
