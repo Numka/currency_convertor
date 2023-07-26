@@ -32,6 +32,7 @@ class ConvertorFetcherBloc extends Bloc<ConvertorFetcherEvent, ConvertorFetcherS
           final currencyData = await localDB.fetchCurrencyDataFromJson();
           emit(ConvertorFetcherState.fallBackDataArrived(currencyData));
         } else {
+          emit(ConvertorFetcherState.dataArrived(currencyData));
           await localDB.writeCurrencyDataToLocalDB(currencyData);
         }
       }
